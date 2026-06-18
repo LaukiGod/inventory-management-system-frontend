@@ -1,4 +1,5 @@
-const BASE = '/api'
+// Use the environment variable for production, or fall back to /api for dev (which uses the Vite proxy)
+const BASE = import.meta.env.VITE_API_URL || '/api'
 
 function getToken(): string | null {
   return localStorage.getItem('access_token')
